@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 # ============================================================
-# NEXORA â€” QUANTUM-ENHANCED CROP YIELD PREDICTION
+# NEXORA 🌱 QUANTUM-ENHANCED CROP YIELD PREDICTION
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -23,7 +23,7 @@ COMPARISON_FILE = BASE_DIR / "model_comparison.csv"
 
 st.set_page_config(
     page_title="NEXORA | Smart Agriculture",
-    page_icon="ðŸŒ±",
+    page_icon="🌱",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -181,7 +181,7 @@ def get_field_insights(record):
 
     if rainfall < 50:
         insights.append(
-            "ðŸŒ§ï¸ Rainfall input is relatively low. "
+            "🌱 Rainfall input is relatively low. "
             "Consider checking local rainfall history."
         )
     elif rainfall > 200:
@@ -191,55 +191,55 @@ def get_field_insights(record):
         )
     else:
         insights.append(
-            "ðŸŒ¦ï¸ Rainfall input is within the demonstration "
+            "🌱 Rainfall input is within the demonstration "
             "range of 50â€“200 mm."
         )
 
     if temperature < 15:
         insights.append(
-            "ðŸŒ¡ï¸ Temperature is on the cooler side for this "
+            "🌱 Temperature is on the cooler side for this "
             "demonstration. Suitability depends on the crop."
         )
     elif temperature > 35:
         insights.append(
-            "â˜€ï¸ Temperature is high in this demonstration. "
+            "🌱 Temperature is high in this demonstration. "
             "Check crop-specific heat stress guidance."
         )
     else:
         insights.append(
-            "ðŸŒ¡ï¸ Temperature is within the demonstration "
+            "🌱 Temperature is within the demonstration "
             "range of 15â€“35 Â°C."
         )
 
     if moisture < 30:
         insights.append(
-            "ðŸ’§ Soil moisture is relatively low. "
+            "🌱Soil moisture is relatively low. "
             "Verify the sensor reading and crop water needs."
         )
     elif moisture > 70:
         insights.append(
-            "ðŸ’§ Soil moisture is relatively high. "
+            "🌱 Soil moisture is relatively high. "
             "Check whether the soil is waterlogged."
         )
     else:
         insights.append(
-            "ðŸ’§ Soil moisture is within the demonstration "
+            "🌱 Soil moisture is within the demonstration "
             "range of 30â€“70%."
         )
 
     if ndvi < 0.3:
         insights.append(
-            "ðŸ›°ï¸ NDVI is relatively low and may indicate "
+            "🌱 NDVI is relatively low and may indicate "
             "limited vegetation. Check crop stage and image quality."
         )
     elif ndvi > 0.7:
         insights.append(
-            "ðŸ›°ï¸ NDVI is relatively high, which can indicate "
+            "🌱 NDVI is relatively high, which can indicate "
             "strong vegetation in suitable conditions."
         )
     else:
         insights.append(
-            "ðŸ›°ï¸ NDVI is in the middle range of this demonstration."
+            "🌱 NDVI is in the middle range of this demonstration."
         )
 
     return insights
@@ -324,7 +324,7 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    st.markdown("### âš™ï¸ System Status")
+    st.markdown("### 🌱 System Status")
 
     backend_online = check_backend()
 
@@ -342,7 +342,7 @@ with st.sidebar:
 
 
 # ============================================================
-# PAGE 1 â€” YIELD PREDICTION
+# PAGE 1 🌱 YIELD PREDICTION
 # ============================================================
 
 if page == "Yield Prediction":
@@ -366,7 +366,7 @@ if page == "Yield Prediction":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸŒ§ï¸ Weather Inputs</h4>
+                <h4>🌱¸ Weather Inputs</h4>
                 <p>Enter rainfall and temperature measurements.</p>
             </div>
             """,
@@ -377,7 +377,7 @@ if page == "Yield Prediction":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸŒ¿ Soil Conditions</h4>
+                <h4>🌱 Soil Conditions</h4>
                 <p>Provide soil moisture and vegetation index.</p>
             </div>
             """,
@@ -388,7 +388,7 @@ if page == "Yield Prediction":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸ§  Prediction Engine</h4>
+                <h4>🌱  Prediction Engine</h4>
                 <p>Send input features to the FastAPI service.</p>
             </div>
             """,
@@ -444,7 +444,7 @@ if page == "Yield Prediction":
             )
 
         submitted = st.form_submit_button(
-            "ðŸš€ Predict Crop Yield",
+            "🌱 Predict Crop Yield",
             use_container_width=True,
         )
 
@@ -621,7 +621,7 @@ if page == "Yield Prediction":
 
 
 # ============================================================
-# PAGE 2 â€” MODEL PERFORMANCE
+# PAGE 2 🌱 MODEL PERFORMANCE
 # ============================================================
 
 elif page == "Model Performance":
@@ -847,7 +847,7 @@ elif page == "Model Performance":
 
     st.markdown(
         '<div class="section-title">'
-        'ðŸŽ¯ Actual vs Predicted Yield</div>',
+        '🌱 Actual vs Predicted Yield</div>',
         unsafe_allow_html=True,
     )
 
@@ -1031,7 +1031,7 @@ elif page == "Model Performance":
 
 
 # ============================================================
-# PAGE 3 â€” PREDICTION HISTORY
+# PAGE 3 🌱 PREDICTION HISTORY
 # ============================================================
 
 elif page == "Prediction History":
@@ -1039,7 +1039,7 @@ elif page == "Prediction History":
     st.markdown(
         """
         <div class="hero">
-            <h1>ðŸ“œ Prediction History</h1>
+            <h1>🌱 Prediction History</h1>
             <p>
                 Review and export predictions generated during
                 this Streamlit session.
@@ -1125,7 +1125,7 @@ elif page == "Prediction History":
         )
 
         if st.button(
-            "ðŸ—‘ï¸ Clear Session History",
+            "🌱 Clear Session History",
             use_container_width=False,
         ):
             st.session_state.prediction_history = []
@@ -1147,7 +1147,7 @@ elif page == "About NEXORA":
     st.markdown(
         """
         <div class="hero">
-            <h1>ðŸŒ About NEXORA</h1>
+            <h1>🌱About NEXORA</h1>
             <p>
                 Exploring AI and quantum machine learning
                 for agricultural prediction.
@@ -1177,7 +1177,7 @@ elif page == "About NEXORA":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸŒ± Agricultural Inputs</h4>
+                <h4>🌱 Agricultural Inputs</h4>
                 <p>
                     Rainfall, temperature, soil moisture,
                     and Normalized Difference Vegetation Index (NDVI).
@@ -1190,7 +1190,7 @@ elif page == "About NEXORA":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸ§  Machine Learning</h4>
+                <h4>🌱  Machine Learning</h4>
                 <p>
                     Model predictions and performance comparisons
                     help assess the behaviour of different approaches.
@@ -1204,7 +1204,7 @@ elif page == "About NEXORA":
         st.markdown(
             """
             <div class="info-card">
-                <h4>âš›ï¸ Quantum Machine Learning</h4>
+                <h4>🌱 Quantum Machine Learning</h4>
                 <p>
                     A quantum neural network (QNN) is explored
                     as an experimental approach to prediction.
@@ -1217,7 +1217,7 @@ elif page == "About NEXORA":
         st.markdown(
             """
             <div class="info-card">
-                <h4>ðŸ“Š Model Evaluation</h4>
+                <h4>🌱Model Evaluation</h4>
                 <p>
                     MAE, RMSE, RÂ², and actual-versus-predicted
                     visualizations help examine model performance.
